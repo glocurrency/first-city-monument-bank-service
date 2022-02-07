@@ -1,1 +1,77 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined static method GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:where\\(\\)\\.$#"
+			count: 1
+			path: src/Console/FetchTransactionsUpdateCommand.php
+
+		-
+			message: "#^Part \\$transaction\\-\\>getKey\\(\\) \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: src/Exceptions/CancelTransactionException.php
+
+		-
+			message: "#^Part \\$bank\\-\\>getKey\\(\\) \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: src/Exceptions/CreateTransactionException.php
+
+		-
+			message: "#^Part \\$transaction\\-\\>getKey\\(\\) \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: src/Exceptions/CreateTransactionException.php
+
+		-
+			message: "#^Part \\$recipient\\-\\>getKey\\(\\) \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 2
+			path: src/Exceptions/SendTransactionException.php
+
+		-
+			message: "#^Part \\$transaction\\-\\>getKey\\(\\) \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: src/Exceptions/SendTransactionException.php
+
+		-
+			message: "#^Property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Recipient\\:\\:\\$id_expiry \\(Illuminate\\\\Support\\\\Carbon\\|null\\) does not accept Carbon\\\\CarbonInterface\\|null\\.$#"
+			count: 1
+			path: src/Helpers/RecipientFactory.php
+
+		-
+			message: "#^Property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Sender\\:\\:\\$id_expiry \\(Illuminate\\\\Support\\\\Carbon\\|null\\) does not accept Carbon\\\\CarbonInterface\\|null\\.$#"
+			count: 1
+			path: src/Helpers/SenderFactory.php
+
+		-
+			message: "#^Call to an undefined static method GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\BankCode\\:\\:firstWhere\\(\\)\\.$#"
+			count: 1
+			path: src/Jobs/CreateBankTransactionJob.php
+
+		-
+			message: "#^Call to an undefined static method GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:create\\(\\)\\.$#"
+			count: 1
+			path: src/Jobs/CreateBankTransactionJob.php
+
+		-
+			message: "#^Call to an undefined static method GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:firstWhere\\(\\)\\.$#"
+			count: 1
+			path: src/Jobs/CreateBankTransactionJob.php
+
+		-
+			message: "#^Access to an undefined property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:\\$recipient\\.$#"
+			count: 1
+			path: src/Jobs/SendTransactionJob.php
+
+		-
+			message: "#^Access to an undefined property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:\\$processingItem\\.$#"
+			count: 1
+			path: src/Listeners/UpdateProcessingItemStateSubscriber.php
+
+		-
+			message: "#^Access to an undefined property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:\\$recipient\\.$#"
+			count: 1
+			path: src/Models/Transaction.php
+
+		-
+			message: "#^Access to an undefined property GloCurrency\\\\FirstCityMonumentBank\\\\Models\\\\Transaction\\:\\:\\$sender\\.$#"
+			count: 1
+			path: src/Models/Transaction.php
 

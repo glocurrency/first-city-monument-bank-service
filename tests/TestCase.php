@@ -5,6 +5,7 @@ namespace GloCurrency\FirstCityMonumentBank\Tests;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use GloCurrency\FirstCityMonumentBank\Tests\Fixtures\TransactionFixture;
 use GloCurrency\FirstCityMonumentBank\Tests\Fixtures\ProcessingItemFixture;
+use GloCurrency\FirstCityMonumentBank\Tests\Fixtures\BankFixture;
 use GloCurrency\FirstCityMonumentBank\FirstCityMonumentBankServiceProvider;
 use GloCurrency\FirstCityMonumentBank\FirstCityMonumentBank;
 
@@ -14,6 +15,7 @@ abstract class TestCase extends OrchestraTestCase
     {
         FirstCityMonumentBank::useTransactionModel(TransactionFixture::class);
         FirstCityMonumentBank::useProcessingItemModel(ProcessingItemFixture::class);
+        FirstCityMonumentBank::useBankModel(BankFixture::class);
     }
 
     protected function getPackageProviders($app)
