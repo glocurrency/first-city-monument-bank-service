@@ -14,14 +14,11 @@ use GloCurrency\MiddlewareBlocks\Contracts\ProcessingItemInterface as MProcessin
 use GloCurrency\FirstCityMonumentBank\Tests\Fixtures\BankFixture;
 use GloCurrency\FirstCityMonumentBank\Tests\FeatureTestCase;
 use GloCurrency\FirstCityMonumentBank\Models\Transaction;
-use GloCurrency\FirstCityMonumentBank\Models\Sender;
-use GloCurrency\FirstCityMonumentBank\Models\Recipient;
 use GloCurrency\FirstCityMonumentBank\Models\BankCode;
 use GloCurrency\FirstCityMonumentBank\Jobs\CreateBankTransactionJob;
 use GloCurrency\FirstCityMonumentBank\Exceptions\CreateTransactionException;
 use GloCurrency\FirstCityMonumentBank\Events\TransactionCreatedEvent;
 use GloCurrency\FirstCityMonumentBank\Enums\TransactionStateCodeEnum;
-use BrokeYourBike\FirstCityMonumentBank\Enums\TransactionTypeEnum;
 
 class CreateBankTransactionJobTest extends FeatureTestCase
 {
@@ -161,13 +158,6 @@ class CreateBankTransactionJobTest extends FeatureTestCase
         $recipient->method('getBankCode')->willReturn($this->faker()->word());
         $recipient->method('getBankAccount')->willReturn($this->faker->numerify('##########'));
 
-        /** @var MRecipientInterface $recipient */
-        $bank = BankFixture::factory()->create([
-            'country_code' => $recipient->getCountryCode(),
-            'code' => $recipient->getBankCode(),
-        ]);
-        $bank->delete();
-
         $transaction = $this->getMockBuilder(MTransactionInterface::class)->getMock();
         $transaction->method('getId')->willReturn('1234');
         $transaction->method('getType')->willReturn(MTransactionTypeEnum::BANK);
@@ -177,6 +167,13 @@ class CreateBankTransactionJobTest extends FeatureTestCase
 
         $processingItem = $this->getMockBuilder(MProcessingItemInterface::class)->getMock();
         $processingItem->method('getTransaction')->willReturn($transaction);
+
+        /** @var MRecipientInterface $recipient */
+        $bank = BankFixture::factory()->create([
+            'country_code' => $recipient->getCountryCode(),
+            'code' => $recipient->getBankCode(),
+        ]);
+        $bank->delete();
 
         $this->expectExceptionMessage("for {$bank->country_code}/{$bank->code} not found");
         $this->expectException(CreateTransactionException::class);
