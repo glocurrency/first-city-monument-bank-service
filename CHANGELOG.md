@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/glocurrency/first-city-monument-bank-service/compare/v0.1.0...v0.1.1) (2022-02-08)
+
+
+### Bug Fixes
+
+* update `glocurrency/middleware-blocks` ([51a2f26](https://www.github.com/glocurrency/first-city-monument-bank-service/commit/51a2f2650789ce1d1af5adc2a6273dd5a4a86ff0))
+
 ## 0.1.0 (2022-02-07)
 
 
