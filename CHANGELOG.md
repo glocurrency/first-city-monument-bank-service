@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/glocurrency/first-city-monument-bank-service/compare/v0.1.1...v0.1.2) (2022-11-24)
+
+
+### Miscellaneous Chores
+
+* update description ([5c6afcf](https://www.github.com/glocurrency/first-city-monument-bank-service/commit/5c6afcf5a69070ddfe5fe3e0152327da16917fa1))
+
 ### [0.1.1](https://www.github.com/glocurrency/first-city-monument-bank-service/compare/v0.1.0...v0.1.1) (2022-02-08)
 
 
