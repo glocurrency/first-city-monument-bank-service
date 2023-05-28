@@ -35,8 +35,8 @@ class ConfigTest extends TestCase
     /** @test */
     public function it_can_return_values()
     {
-        $url = $this->faker->url;
-        $clientId = $this->faker->uuid;
+        $url = $this->faker->url();
+        $clientId = $this->faker->uuid();
         $clientSecret = $this->faker->password();
 
         $configPrefix = 'services.first_city_monument_bank.api';
