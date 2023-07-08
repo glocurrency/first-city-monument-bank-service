@@ -22,7 +22,7 @@ class ErrorCodeFactory
             ErrorCodeEnum::PUBLIC_KEY_ERROR => TransactionStateCodeEnum::API_ERROR,
             ErrorCodeEnum::TOKEN_ERROR => TransactionStateCodeEnum::API_ERROR,
             ErrorCodeEnum::DESTINATION_ERROR => TransactionStateCodeEnum::API_ERROR,
-            ErrorCodeEnum::TRANSACTION_ERROR => TransactionStateCodeEnum::API_ERROR,
+            ErrorCodeEnum::TRANSACTION_ERROR => TransactionStateCodeEnum::TRANSACTION_ERROR,
             ErrorCodeEnum::NAME_ENQUIRY_ERROR => TransactionStateCodeEnum::RECIPIENT_NAME_VALIDATION_FAILED,
             ErrorCodeEnum::PAYOUT_TYPE_ERROR => TransactionStateCodeEnum::API_ERROR,
             ErrorCodeEnum::REFERENCE_ERROR => TransactionStateCodeEnum::DUPLICATE_TRANSACTION,

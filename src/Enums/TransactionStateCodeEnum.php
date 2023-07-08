@@ -16,6 +16,7 @@ enum TransactionStateCodeEnum: string
     case FAILED = 'failed';
     case CANCELED = 'canceled';
     case API_ERROR = 'api_error';
+    case TRANSACTION_ERROR = 'transaction_error';
     case DUPLICATE_TRANSACTION = 'duplicate_transaction';
     case TRANSACTION_AMOUNT_INVALID = 'transaction_amount_invalid';
     case RECIPIENT_NAME_VALIDATION_FAILED = 'recipient_name_validation_failed';
@@ -39,6 +40,7 @@ enum TransactionStateCodeEnum: string
             self::FAILED => MProcessingItemStateCodeEnum::MANUAL_RECONCILIATION_REQUIRED,
             self::CANCELED => MProcessingItemStateCodeEnum::MANUAL_RECONCILIATION_REQUIRED,
             self::API_ERROR => MProcessingItemStateCodeEnum::PROVIDER_NOT_ACCEPTING_TRANSACTIONS,
+            self::TRANSACTION_ERROR => MProcessingItemStateCodeEnum::MANUAL_RECONCILIATION_REQUIRED,
             self::DUPLICATE_TRANSACTION => MProcessingItemStateCodeEnum::EXCEPTION,
             self::TRANSACTION_AMOUNT_INVALID => MProcessingItemStateCodeEnum::TRANSACTION_AMOUNT_INVALID,
             self::RECIPIENT_NAME_VALIDATION_FAILED => MProcessingItemStateCodeEnum::RECIPIENT_NAME_VALIDATION_FAILED,
